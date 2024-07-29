@@ -1,0 +1,25 @@
+my-app/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── ... (other frontend files)
+├── netlify/
+│   └── functions/
+│       └── api.js (your API endpoint)
+├── netlify.toml
+└── package.json
+
+
+https://<your-netlify-site>.netlify.app/.netlify/functions/api
+
+
+// netlify/functions/api.js
+
+exports.handler = async (event, context) => {
+  // Your API logic here
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: "Hello from the API!" }),
+  };
+};
